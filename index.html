@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Joke App</title>
+    <style>
+        .joke-container {
+            display: none;
+            border: 1px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="jokeButton">Get Random Joke</button>
+    <div class="joke-container" id="jokeContainer"></div>
+
+    <script>
+        const jokeButton = document.getElementById('jokeButton');
+        const jokeContainer = document.getElementById('jokeContainer');
+
+        jokeButton.addEventListener('click', fetchRandomJoke);
+
+        function fetchRandomJoke() {
+            fetch('https://v2.jokeapi.dev/joke/Any')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.type === 'single') {
+                        jokeContainer.textContent = data.joke;
+                    } else if (data.type === 'twopart') {
+                        jokeContainer.textContent = `${data.setup} ${data.delivery}`;
+                    }
+                    jokeContainer.style.display = 'block';
+                })
+                .catch(error => {
+                    console.log(error);
+                    jokeContainer.textContent = 'Failed to fetch a joke.';
+                    jokeContainer.style.display = 'block';
+                });
+        }
+    </script>
+</body>
+</html>
