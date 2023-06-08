@@ -2,12 +2,19 @@
 <html>
 <head>
     <title>Random Joke App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
+            flex: 1;
             max-width: 500px;
             margin: 0 auto;
             padding: 20px;
@@ -77,6 +84,21 @@
             margin-top: 0;
             color: #333;
         }
+
+        .footer {
+            background-color: mintcream;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -96,8 +118,15 @@
 
         <div class="about-section">
             <h2>About Us</h2>
-            <p>Welcome to our web page created by Mysterioxx! <br>Click "Get a Joke" and let us bring a smile to your face with our best jokes. We're here to make your day better and lighten the load with laughter.</p>
+            <p>Welcome to our web page created by Mysterioxx!<br>
+                Click "Get a Joke" and let us bring a smile to your face with our best jokes. We're here to make your day better and lighten the load with laughter.</p>
         </div>
+    </div>
+
+    <div class="footer">
+        <a href="https://github.com/mysterioxx" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/your-abhishekruhela" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fas fa-globe"></i></a>
     </div>
 
     <script>
